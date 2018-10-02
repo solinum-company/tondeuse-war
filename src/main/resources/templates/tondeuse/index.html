@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+     <meta charset="utf-8"/>
+        <title>Tondeuse à Gazon </title>   
+<style>
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.button2 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
+.button2:hover {
+    background-color: #008CBA;
+    color: white;
+}
+</style>
+
+</head>
+<body >
+  <div align="center">
+	<form action="/tondeuse/save" method="POST">
+		  
+	  <div class="inset">
+		  <div th:if="${message} =='F'">
+		 <font color="red">   Format entree incorrect ! </font>                   
+		 </div>           
+		<table>
+		<tr>
+		<td>
+		   <label> <font color=" #008CBA">Entrée :</font></label>
+		</td>
+		</tr>
+		<tr>
+		<td>
+			<textarea id="entree" name="entree" class="span4"
+							rows="5">5 5
+1 2 N
+GAGAGAGAA
+3 3 E
+AADAADADDA</textarea>
+		</td>
+		</tr>
+		<tr>
+		<td>
+		   <div align="right"> <input type="submit" name="go" id="go" value="valider"  class="button button2" /></div>
+		</td>
+		</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<br/><br/>
+			<div align="center">
+			<h2> <font color="green">Résultat Attendu</font></h2>
+			<table>
+			<tr th:each="res : ${result}">
+			<td th:text="${res}"></td>
+			</tr>
+			</table>
+			</div>
+</body>
+</html>

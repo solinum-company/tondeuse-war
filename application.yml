@@ -1,0 +1,19 @@
+## YAML Template.
+---
+
+spring:
+  application:
+    name: sysvote
+
+server:
+  port: 8797
+  #address: 192.168.2.109
+  
+
+##eureka:
+  ##client:
+    ##serviceUrl:
+  ##    defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  ##instance:
+  ##  preferIpAddress: true
+  ##  hostname: localhost
